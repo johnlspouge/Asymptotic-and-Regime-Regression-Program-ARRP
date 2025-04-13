@@ -1,7 +1,9 @@
 # Asymptotic and Regime Regression Program (ARRP)
-ARRP implements both regime regression and robust regression.   
-Asymptotic regression is a special application of regime regression for estimating asymptotic parameters.  
-Generally, 'regime regression' is a more apt name than 'asymptotic regression'.
+**ARRP** implements both regime regression and robust regression. 
+* **Robust regression** is a systematic method of removing outliers from linear regression data.
+* **Regime regression** is a systematic method for removing points from regression data when they lie outside the contiguous regime in which a linear model is valid.
+  * **Asymptotic regression** is a special type of regime regression, used for estimating parameters in an asymptotic regime.  
+  * Generally, 'regime regression' is a better name than 'asymptotic regression' for the purpose of the ARRP.
 
 ### Usage
 
