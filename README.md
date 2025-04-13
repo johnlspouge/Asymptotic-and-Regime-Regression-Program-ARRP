@@ -1,10 +1,25 @@
 # Asymptotic and Regime Regression Program (ARRP)
-**ARRP** implements both regime regression and robust regression. 
+**ARRP** implements both regime regression and robust regression corresponding to linear and constant models. 
 * **Robust regression** is a systematic method of removing outliers from linear regression data.
 * **Regime regression** is a systematic method for removing points from regression data when they lie outside the contiguous regime in which a linear model is valid.
   * **Asymptotic regression** is a special type of regime regression, used for estimating parameters in an asymptotic regime.  
   * Generally, 'regime regression' is a better name than 'asymptotic regression' for the purpose of the ARRP.
 
+---
+### Files and Installation
+
+The download ZIP file `ARRP_1.1.zip` contains a single directory `ARRP_1.1` containing:
+1. `readme.txt`: with statement "This directory contains files related to regime regression and robust regression."
+1. `arrp_1.1_LINUX.zip`: contains a single LINUX executable `arrp.exe` with the regression methods.
+1. `arrp_1.1_WINDOWS.zip`: contains a single Windows executable `arrp.exe` with the regression methods.
+1. `arrp_cpp_files.zip`: C++ source files with main() in `sls_arrp.t.cpp`.
+1. `points.dat`: an example of an input file.
+
+* No special installation is required.
+* The executable files can be downloaded, unzipped and run with the appropriate command line.
+* Alternatively, the source C++ files can be downloaded, unzipped, and complied in a suitable C++ environment.
+
+---
 ### Usage
 
 **`arrp.exe <OPTIONS>`**
@@ -166,18 +181,6 @@ X          Y          Error      Weight
 * The -append option prefixes a delimiter to the output above.
 * To demarcate appended output, the -append option prefixes a line of hyphens.
 
----
-### Files and Installation
-
-The files in the download directory include:
-1. `regression_1.0_WINDOWS.zip`: Windows executable with the regression methods.
-1. `regression_LINUX_1.0.zip`: LINUX executable with the regression methods.
-1. `regression_cpp_files.zip`: C++ source files.
-1. `points.dat`: an example of the input file.
-
-* No special installation is required.
-* The executable files can be downloaded, unzipped and run with the appropriate command line.
-* Alternatively, the source C++ files can be downloaded, unzipped, and complied in a suitable C++ environment.
 ---
 ### References
 
