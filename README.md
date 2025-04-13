@@ -1,5 +1,7 @@
 # Asymptotic and Regime Regression Program (ARRP)
-ARRP implements both regime regression and robust regression.
+ARRP implements both regime regression and robust regression.   
+Asymptotic regression is a special application of regime regression for estimating asymptotic parameters.  
+Generally, 'regime regression' is a more apt name than 'asymptotic regression'.
 
 ### Usage
 
@@ -19,17 +21,17 @@ ARRP implements both regime regression and robust regression.
 **Examples**
 
 * `arrp.exe -in points.dat -out regress.out`  
-Asymptotic linear regression (c = 2.0), allowing removal of points on both left and right
+Linear regime regression (c = 2.0), allowing removal of points on both left and right
 * `arrp.exe -in points.dat -out regress.out -flat -include left`  
-Asymptotic constant regression (c = 2.0), allowing removal of points on only the right
+Constant regime regression (c = 2.0), onto a horizontal line, allowing removal of points on only the right
 * `arrp.exe -in points.dat -out regress.out -c 1.0 -include right`  
-Asymptotic linear regression (c = 1.0), allowing removal of points on only the left
+Linear regime regression (c = 1.0), allowing removal of points on only the left
 * `arrp.exe -in points.dat -out regress.out -regression weighted`  
 Weighted linear regression
 * `arrp.exe -in points.dat -out regress.out -regression robust`  
-Robust linear regression with the Andrews' function (a = 1.339)
+Linear robust regression with the Andrews' function (a = 1.339) [2]
 * `arrp.exe -in points.dat -out regress.out -flat -regression robust -a 3.0`  
-Robust constant regression with the Andrews' function (a = 3.0)
+Constant robust regression with the Andrews' function (a = 3.0) [2]
 ---
 ### Options and Parameter Values
 
@@ -46,15 +48,15 @@ The option is useful for collecting output from multiple related runs.
   * Default: If the option is omitted, ARRP defaults to linear regression y = β<sub>0</sub>+β<sub>1</sub>x.
 * `-flat`: ARRP performs constant regression y = β<sub>0</sub>.
 * `[ -regression <Type> ]`, an option for switching to robust or weighted least-square regression  
-Default `-regression asymptotic`: If the option is omitted, ARRP defaults to asymptotic regression. 
-ARRP then uses the following additional parameters for its asymptotic regression:  
-  * `[ -c <Parameter 'c'> ]`, the parameter 'c' of asymptotic regression  
+Default `-regression asymptotic`: If the option is omitted, ARRP defaults to asymptotic (regime) regression. 
+ARRP then uses the following additional parameters for its regime regression:  
+  * `[ -c <Parameter 'c'> ]`, the parameter 'c' of regime regression  
     * Default '-c 2.0', as recommended in [1]  
     * The parameter 'c' must be strictly positive.
   * `[ -include <parameter> ]`  
-    * Default `-include neither`: If the option is omitted, the asymptotic regression permits removal of data points on both the left and right sides, not forcing the inclusion of points on either boundary.
-    * `-include left`: the asymptotic regression must include points on the left starting from the leftmost point, but permits removal of data points from the right side.
-    * `-include right`: the asymptotic regression includes points on the right starting from the rightmost point, but permits removal of data points from the left side.
+    * Default `-include neither`: If the option is omitted, the regime regression permits removal of data points on both the left and right sides, not forcing the inclusion of points on either boundary.
+    * `-include left`: the regime regression must include points on the left starting from the leftmost point, but permits removal of data points from the right side.
+    * `-include right`: the regime regression includes points on the right starting from the rightmost point, but permits removal of data points from the left side.
 * `-regression robust: ARRP performs robust regression.  
 ARRP then uses the following additional parameters for its robust regression.
   * `[ -a <Parameter 'a'> ]`, the parameter 'a' of robust regression
@@ -64,7 +66,7 @@ ARRP then uses the following additional parameters for its robust regression.
 ARRP applies robust regression twice during its run:
       * to provide an initial approximation with Ramsay’s function (with `‘a’` = 0.3),
       * then, to do a robust regression with Andrews' function (with the actual input parameter `‘a’`).
-* `-regression weighted`: the asymptotic regression includes all points, making the asymptotic regression equivalent to a weighted least-squares regression.
+* `-regression weighted`: the regime regression includes all points, making the regime regression equivalent to a weighted least-squares regression.
 ---
 ### The Format of an Input File
 <pre>
@@ -104,7 +106,7 @@ In them, all lines (including the last) end in a newline.
 **An Example of the Output for Regime Regression**
 
 `arrp.exe -in points.dat -out regress.out -flat -include right`  
-The command does regime (or asymptotic) regression on a constant (c = 2.0), allowing removal of points on the left only.
+The command does constant regime regression (c = 2.0), onto a horizontal line, allowing removal of points on the left only.
 
 **"regress.out"**
 <pre>
@@ -127,7 +129,7 @@ X          Y          Error      Weight
 0.9        1.05336    0.0165     1
 </pre>
 
-* The weight "1" indicates that the point was used in the asymptotic regression; "0", not.
+* The weight "1" indicates that the point was used in the regime regression; "0", not.
 * See the next example for output without the `-flat` option.
 * 
 **An Example of the Output for Robust Regression**
