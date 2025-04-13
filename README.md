@@ -51,7 +51,7 @@ The option is useful for collecting output from multiple related runs.
 Default `-regression asymptotic`: If the option is omitted, ARRP defaults to asymptotic (regime) regression. 
 ARRP then uses the following additional parameters for its regime regression:  
   * `[ -c <Parameter 'c'> ]`, the parameter 'c' of regime regression  
-    * Default '-c 2.0', as recommended in [1]  
+    * Default `'-c 2.0'`, as recommended in [1]  
     * The parameter 'c' must be strictly positive.
   * `[ -include <parameter> ]`  
     * Default `-include neither`: If the option is omitted, the regime regression permits removal of data points on both the left and right sides, not forcing the inclusion of points on either boundary.
@@ -143,8 +143,8 @@ Input      points.dat
 Flat       no         Result     f(y)~beta0+beta1*y
 Regression robust     a          1.339                     
 Range      0          0.9
-beta0	     0.320971   error      0.0123775  
-beta1	     0.831244   error      0.0211017   
+beta0	   0.320971   error      0.0123775  
+beta1	   0.831244   error      0.0211017   
 	
 X          Y          Error      Weight
 0          0.33726    0.0165     3349.24
