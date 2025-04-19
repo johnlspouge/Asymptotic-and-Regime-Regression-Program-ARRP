@@ -9,10 +9,10 @@
 ### Files and Installation
 
 The download ZIP file `ARRP_1.1.zip` contains a single directory `ARRP_1.1` containing:
-1. `readme.txt`: with statement "This directory contains files related to regime regression and robust regression."
+1. `README.md`: contains this README.
+1. `arrp_cpp_files/`: directory with C++ source files. `sls_arrp.t.cpp` contains main().
 1. `arrp_1.1_LINUX.zip`: contains a single LINUX executable `arrp.exe` with the regression methods.
 1. `arrp_1.1_WINDOWS.zip`: contains a single Windows executable `arrp.exe` with the regression methods.
-1. `arrp_cpp_files.zip`: C++ source files with main() in `sls_arrp.t.cpp`.
 1. `points.dat`: an example of an input file.
 
 * No special installation is required.
