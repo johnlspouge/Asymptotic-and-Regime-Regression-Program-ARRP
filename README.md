@@ -17,7 +17,7 @@ The download ZIP file `ARRP_1.1.zip` contains a single directory `ARRP_1.1` cont
 
 * No special installation is required.
 * The executable files can be downloaded, unzipped and run with the appropriate command line.
-* Alternatively, the source C++ files can be downloaded, unzipped, and complied in a suitable C++ environment.
+* Alternatively, the source C++ files can be downloaded and complied in a suitable C++ environment.
 
 ---
 ### Usage
