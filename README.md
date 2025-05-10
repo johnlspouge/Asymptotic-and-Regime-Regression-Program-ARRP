@@ -94,7 +94,7 @@ x<sub>n</sub>    y<sub>n</sub>    error<sub>n</sub>
 </pre>
 
 * <code>(x<sub>k</sub>, y<sub>k</sub>, error<sub>k</sub>)</code> (k = 1,2,...,n) are the data points (with errors) for regression.
-* <code>error<sub>k</sub></code> is the error in <code>y<sub>k</sub></code>, so error<sub>k</sub> must be strictly positive.
+* <code>error<sub>k</sub></code> is the error in <code>y<sub>k</sub></code>, so <code>error<sub>k</sub></code> must be strictly positive.
 * The points must be sorted, so <code>x<sub>1</sub> < x<sub>2</sub> <...< x<sub>n</sub></code>.
 * The output file contains all ARRP's input parameters, including the input data filename. The input data can be annotated elsewhere if necessary, so the ARRP input data format is strict.
   * Empty lines and lines containing only whitespace are ignored.
